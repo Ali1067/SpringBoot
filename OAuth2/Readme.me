@@ -1,0 +1,33 @@
+OAuth 2.0 & OpenID Using google 
+The Project will provide a brief demo of OAuth 2.0 Where we're Getting Access Token, Creating our custom JWT,  will check OPENID where we'll fetch user profile 
+
+### Prerequisites
+* Google Account 
+* Create API Key from https://console.cloud.google.com/ from side menu API & Services > OAuth Consent Screen
+* You must provide a url of your app, it'll tell google that request is coming from a valid source. in this example we're using http://localhost:8080/login/oauth2/code/google 
+* get Client ID and Client Seceret and past that into properties.yaml file 
+* You're googd to go. Open Browser and hit localhost:8080 and a google login screen will be visible to login
+
+### Installation
+1. Clone the repo: `git clone https://github.com/user/********`
+2. Install dependencies: `mvn install`
+3. Run the app: `mvn spring-boot:run`
+
+General Annotation for Easy Understanding:
+1 - A User enter to a building (software) and want to access the resources. A Guard (Login page) collects the credentials, wrap it to a box (unauthenticated yet) and send it to supervisor (Authentication Manager)
+```
+// The Guard bundles the credentials
+authenticationManager.authenticate(
+    new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword())
+);
+```
+- We can create our Custom JWT token (See JWTUtils.java in this repo) here once it approve
+if Supervisor (Auth Manager) allowed it can access the assets from record room 
+```
+userDetailsService.loadUserByUsername(username)
+```
+
+
+
+
+
