@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: OAuth2
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 41425125647956624852423648.apps.*******.com # Generate from https://console.cloud.google.com/ --> Api for OAUTH 2.0
+            client-secret: ABCDFE-41425125647956624852423648          # Generate from https://console.cloud.google.com/ --> Api for OAUTH 2.0
+            scope:
+              - openid   # profile will be fetch while auth, no need to seprately call profile api
+              - profile   # i need profile, email
+              - email
+              - https://www.googleapis.com/auth/drive.file # Example OAuth2 Scope
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&prompt=consent
+app:
+  jwt:
+    secret: abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrsdfgxcvcxs    # Your Random String for JWT - atleast 32 Characters
+    expiration-ms: 360000000 # 100 Hour
