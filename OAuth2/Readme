@@ -4,7 +4,7 @@ The Project will provide a brief demo of OAuth 2.0 Where we're Getting Access To
 ### Prerequisites
 * Google Account 
 * Create API Key from https://console.cloud.google.com/ from side menu API & Services > OAuth Consent Screen
-* You must provide a url of your app, it'll tell google that request is coming from a valid source. in this example we're using http://localhost:8080/
+* You must provide a url of your app, it'll tell google that request is coming from a valid source. in this example we're using http://localhost:8080/login/oauth2/code/google
 * get Client ID and Client Seceret and past that into properties.yaml file 
 * You're googd to go. Open Browser and hit localhost:8080 and a google login screen will be visible to login
 
